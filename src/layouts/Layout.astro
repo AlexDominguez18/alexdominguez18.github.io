@@ -1,6 +1,7 @@
 ---
 import "@fontsource-variable/onest";
 import Header from "../components/Header.astro";
+import BackgrounPage from "../components/BackgrounPage.astro";
 
 interface Props {
 	title: string;
@@ -20,11 +21,10 @@ const { title, description } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="">
-		<div class="absolute inset-0 -z-100 h-full w-full items-center px-5 py-5 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#2596be_100%)]">
-			<Header />
-			<slot />
-		</div>
+	<body>
+		<BackgrounPage />
+		<Header />
+		<slot />
 	</body>
 </html>
 <style is:global>
@@ -33,12 +33,20 @@ const { title, description } = Astro.props;
 	}
 	html {
 		font-family: 'Onest Variable', sans-serif;
+		scroll-behavior: smooth;
 	}
 	
 	body {
 		background: #13151a;
 		display: flex;
 		flex-direction: column;
-		height: 100vh
+		min-height: 100vh;
+	}
+
+	@media (prefers-reduce-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
 	}
 </style>
+

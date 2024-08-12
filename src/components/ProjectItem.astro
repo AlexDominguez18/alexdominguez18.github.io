@@ -1,0 +1,17 @@
+---
+import Carrousel from './Carrousel.astro';
+
+const { id, title, description, tags, images, link } = Astro.props;
+---
+
+<h3>{title}</h3>
+<p>{description}</p>
+<a href={link} class="text-blue-500 hover:underline">View project</a>
+<ul>
+  {
+    tags.map((technology) => (
+      <li>{technology}</li>
+    ))
+  }
+</ul>
+<Carrousel id={id} images={images} />

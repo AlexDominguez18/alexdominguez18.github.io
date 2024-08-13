@@ -5,6 +5,7 @@ import SectionContainer from '../components/SectionContainer.astro';
 import Experience from '../components/Experience.astro';
 import About from '../components/About.astro';
 import Projects from '../components/Projects.astro';
+import Badge from '../components/Badge.astro';
 import { CodeIcon, BriefcaseIcon } from '../components/icons/';
 ---
 
@@ -14,13 +15,16 @@ import { CodeIcon, BriefcaseIcon } from '../components/icons/';
 >
 	<main class="px-4">
 		<SectionContainer id="home" class="pt-28 pb-20">
-			<Image
-				src="/images/alejandro.png"
-				alt="Alex's beauty face"
-				class="rounded-full mb-10"
-				width="100"
-				height="100"
-			/>
+			<div class="flex justify-start items-center">
+				<Image
+					src="/images/alejandro.jpg"
+					alt="Alex's beauty face"
+					class="rounded-full mb-10"
+					width="100"
+					height="100"
+				/>
+				<Badge class="ms-10 p-1">Ready to code!</Badge>
+			</div>
 			<About />
 		</SectionContainer>
 		<SectionContainer id="experience" class="pt-10 pb-20">

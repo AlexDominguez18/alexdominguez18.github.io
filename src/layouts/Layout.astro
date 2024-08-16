@@ -2,6 +2,8 @@
 import "@fontsource-variable/onest";
 import Header from "../components/Header.astro";
 import BackgrounPage from "../components/BackgrounPage.astro";
+import Footer from "../components/Footer.astro";
+import { ViewTransitions } from "astro:transitions";
 
 interface Props {
 	title: string;
@@ -20,11 +22,13 @@ const { title, description } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<ViewTransitions />
 	</head>
 	<body>
 		<BackgrounPage />
 		<Header />
 		<slot />
+		<Footer />
 	</body>
 </html>
 <style is:global>

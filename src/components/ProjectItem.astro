@@ -1,4 +1,5 @@
 ---
+import Button from "./Button.astro";
 import Carrousel from "./Carrousel.astro";
 import Pill from "./Pill.astro";
 import ArrowIcon from "./icons/ArrowIcon.astro";
@@ -20,13 +21,8 @@ const { id, title, description, tags, images, link } = Astro.props;
     }
   </ul>
   <Carrousel id={id} images={images} />
-  <a
-    href={link}
-    class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700 max-w-40 mt-4 "
-    >View project...
+  <Button url={link}>
+    View project...
     <ArrowIcon class="size-4 ms-2" />
-  </a>
-  
-
-    
+  </Button>
 </div>

@@ -19,7 +19,7 @@ export default [
   },
   {
     id: 2,
-    title: "Assist's Chat",
+    title: "ASSIST'S CHAT",
     description: "Developed a chat system for Assist that handles multiple client conversations simultaneously. This versatile chat can be integrated into various systems and includes a simple chatbot to address common questions across each platform",
     link: "https://chat.itrans.cucei.udg.mx/",
     images: [

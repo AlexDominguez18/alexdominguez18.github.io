@@ -1,0 +1,47 @@
+---
+import InstagramIcon from "./icons/InstagramIcon.astro";
+import TwitterIcon from "./icons/TwitterIcon.astro";
+import YoutubeIcon from "./icons/YoutubeIcon.astro";
+
+const year = new Date().getFullYear();
+
+const socialNetworks = [
+  {
+    name: "Twitter",
+    url: "#",
+    icon: TwitterIcon,
+  },
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/alexdurandev/",
+    icon: InstagramIcon,
+  },
+  {
+    name: 'Youtube',
+    url: 'https://www.youtube.com/@alexdurandev',
+    icon: YoutubeIcon,
+  }
+];
+---
+
+<footer class="bg-gray-900 mt-40">
+  <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+    <div class="sm:flex sm:items-center sm:justify-between">
+      <span class="text-sm text-gray-200 sm:text-cente"
+        >© {year} Alejandro Duran - Software Developer
+      </span>
+      <div class="flex mt-4 sm:justify-center sm:mt-0">
+        {
+          socialNetworks.map((network) => (
+            <a href={network.url}
+              class="text-gray-300 hover:text-gray-500 dark:hover:text-white ms-5"
+            >
+              <network.icon class="size-6" />
+              <span class="sr-only">{network.name}</span>
+            </a>  
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</footer>

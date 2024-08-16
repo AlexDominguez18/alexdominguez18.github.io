@@ -13,6 +13,7 @@ import MysqlIcon from "./MysqlIcon.astro";
 import RedisIcon from "./RedisIcon.astro";
 import DockerIcon from "./DockerIcon.astro";
 import LivewireIcon from "./LivewireIcon.astro";
+import UserIcon from "./UserIcon.astro";
 
 export { 
   GithubIcon,
@@ -30,4 +31,5 @@ export {
   RedisIcon,
   DockerIcon,
   LivewireIcon,
+  UserIcon
 };

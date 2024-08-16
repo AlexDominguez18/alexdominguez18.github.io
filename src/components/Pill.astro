@@ -83,7 +83,7 @@ const { tagName } = Astro.props;
 const tag = tags[tagName];
 ---
 
-<span class={`flex items-center px-2 py-1 rounded-lg text-sm ${tag.color} ${tag.class}`}>
+<span class={`flex items-center px-4 py-1 rounded-lg text-sm ${tag.color} ${tag.class} hover:scale-125 transition`}>
   <tag.icon class="size-4" />
   <span class="ps-1">{tag.text}</span>
 </span>

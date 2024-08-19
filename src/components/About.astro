@@ -1,0 +1,49 @@
+---
+import Image from "astro/components/Image.astro";
+
+---
+
+<article class="flex flex-col items-center justify-center gap-8 md:flex-row">
+  <div class="text-pretty order-2 md:order-1">
+    <p class="font-semibold text-gray-300 text-justify mb-4">
+      My name is Alejandro Duran, but you can call me just Alex 😅. I started to
+      code because I was interested on develop videogames, now <span
+        class="text-sky-200 font-bold"
+        >I'm a computer science engineer and a software developer</span
+      >. Some of my profesional achievements are contribute to the development of <span
+        class="text-sky-200 font-bold"
+        >some useful web systems and applications for the University
+      </span> that I graduate (2022), the <a
+        href="https://www.cucei.udg.mx/"
+        class=" inline-flex justify-items-center border border-gray-400 rounded-full px-2 hover:text-sky-400 transition"
+        >Universidad de Guadalajara</a
+      > on Jalisco, México.
+    </p>
+  
+    <p class="font-semibold text-gray-300 text-justify mb-4">
+      Currently, I'm focus on full stack devlopment but my experience includes <span
+        class="text-sky-200 font-bold"
+        >Linux server administration, project management, software engineering,
+        low-level programming, and database administration</span
+      >. I am dedicated to problem-solving and implementing effective
+      computational solutions.
+    </p>
+  
+    <p class="font-semibold text-gray-300 text-justify mb-4">
+      Also, I design and teach a <span class="text-sky-200 font-bold"
+        >C/C++ Programming Course</span
+      > for a manufacturing company workers, where I share my knowledge and experience
+      with people who are interested in low level code. You can find the repository
+      of the course in my Github account:
+      <a
+        class="inline-flex justify-items-center px-2 border border-gray-400 rounded-full hover:text-sky-400 transition"
+        href="https://github.com/AlexDominguez18/Curso-Programacion-TSU-UDG/"
+        >Course Repository</a
+      >. Or you can check my <a
+        class="inline-flex justify-items-center px-2 border border-gray-400 rounded-full hover:text-sky-400 transition"
+        href="">Youtube channel</a
+      > to see some of the classes.
+    </p>
+  </div>
+  <Image src="/images/about.jpg" alt="Alex'photo" class="order-1 md:order-2 object-cover w-64 h-full p-1 lg:p-2 lg:w-64 rotate-3 aspect-square rounded-2xl transition-transform duration-500 hover:scale-125" width="200" height="200" style="object-position: 50% 50%" />
+</article>

@@ -23,6 +23,8 @@ const { title, description } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<ViewTransitions />
+		<link rel="stylesheet" href="/css/lite-yt-embed.css" />
+		<script type="module" src="/js/lite-yt-embed.js"></script>
 	</head>
 	<body>
 		<BackgrounPage />
@@ -31,6 +33,7 @@ const { title, description } = Astro.props;
 		<Footer />
 	</body>
 </html>
+
 <style is:global>
 	:root {
 		color-scheme: light dark;
@@ -53,4 +56,3 @@ const { title, description } = Astro.props;
 		}
 	}
 </style>
-

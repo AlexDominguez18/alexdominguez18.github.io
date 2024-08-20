@@ -1,51 +1,55 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Badge from '../components/Badge.astro';
-import GithubIcon from '../components/icons/GithubIcon.astro';
-import LinkedInIcon from '../components/icons/LinkedInIcon.astro';
-import SocialBadge from '../components/SocialBadge.astro';
-import Image from 'astro/components/Image.astro';
+import Layout from "../layouts/Layout.astro";
+import Image from "astro/components/Image.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Home from "../components/Home.astro";
+import Experience from "../components/Experience.astro";
+import About from "../components/About.astro";
+import Projects from "../components/Projects.astro";
+import Badge from "../components/Badge.astro";
+import { CodeIcon, BriefcaseIcon, UserIcon } from "../components/icons/";
 ---
 
-<Layout 
-	title="Alex Duran's portfolio"
-	description="Alex Duran's portfolio, a software and web developer specialized on full-stack development."
+<Layout
+  title="Alex Duran's portfolio"
+  description="Alex Duran's portfolio, a software and web developer specialized on full-stack development."
 >
-	<main>
-		<section class="w-full lg:w-[740px] mx-auto py-40">
-			<Image
-				src="/images/alejandro.png"
-				alt="Alex's beauty face"
-				class="rounded-full mb-10"
-				width="100"
-				height="100"
-			/>
-			<h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10">
-				Hi, I'm Alex 😎
-				<div class="flex justify-center items-center">
-					<Badge>Ready to code!</Badge>
-				</div>
-			</h1>
-			<h2 class="text-xl opacity-80">
-				<strong>+3 years of experience.</strong>
-				<span class="text-yellow-200/90">Software & Web Developer.</span>
-				I'm from Guadalajara Jalisco, México.
-				<span class="text-blue-200/90">Specialized on full-stack development.</span>
-			</h2>
-			<ul class="flex gap-x-4 mt-5">
-				<SocialBadge href="https://github.com/AlexDominguez18">
-					<GithubIcon class="w-6 h-6" />
-					Github
-				</SocialBadge>
-				<SocialBadge href="https://www.linkedin.com/in/oscar-alejandro-dom%C3%ADnguez-duran/">
-					<LinkedInIcon class="w-6 h-6" />
-					LinkedIn
-				</SocialBadge>
-			</ul>
-		</section>
-	</main>
+  <main class="px-4">
+    <SectionContainer id="home" class="pt-28 pb-20">
+      <div class="flex justify-start items-center">
+        <Image
+          src="/images/alejandro.jpg"
+          alt="Alex's beauty face"
+          class="rounded-full mb-10"
+          width="120"
+          height="120"
+        />
+        <a target="_blank" href="/docs/CV - Alejandro Duran (English).pdf" class="hover:scale-105 transition">
+          <Badge class="ms-10 p-1">Download my CV!</Badge>
+        </a>
+      </div>
+      <Home />
+    </SectionContainer>
+    <SectionContainer id="experience" class="pt-10 pb-20">
+      <h2 class="text-2xl font-semibold flex gap-x-2 pb-10">
+        <BriefcaseIcon class="size-8" />
+        Work Experience
+      </h2>
+      <Experience />
+    </SectionContainer>
+    <SectionContainer id="projects" class="pt-10">
+      <h2 class="text-2xl font-semibold flex gap-x-2 pb-10">
+        <CodeIcon class="size-8" />
+        Projects
+      </h2>
+      <Projects />
+    </SectionContainer>
+    <SectionContainer id="about" class="pt-10">
+      <h2 class="text-2xl font-semibold flex gap-x-2 pb-10">
+        <UserIcon class="size-8" />
+        About me
+      </h2>
+      <About />
+    </SectionContainer>
+  </main>
 </Layout>
-
-<style>
-
-</style>

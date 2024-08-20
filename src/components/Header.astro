@@ -1,8 +1,95 @@
-<header class="flex justify-center items-center w-[1120px] mx-auto">
-  <nav class="flex flex-row gap-x-10 opacity-1">
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/portfolio">Projects</a>
-    <a href="/contact">Contact</a>
-  </nav>
+---
+const navItems = [
+  {
+    title: 'Home',
+    label: 'home',
+    href: '#home'
+  },
+  {
+    title: 'Experience',
+    label: 'experience',
+    href: '#experience'
+  },
+  {
+    title: 'Projects',
+    label: 'projects',
+    href: '#projects'
+  },
+  {
+    title: 'About me',
+    label: 'about',
+    href: '#about'
+  },
+];
+---
+<header class="flex justify-center items-center z-50 w-full mx-auto py-10 fixed top-0 ">
+  <nav class="flex px-3 text-sm font-medium rounded-full text-gray-300 hover:text-sky-200">
+    {
+      navItems.map((link) => (
+        <a
+          class="relative block px-2 py-2 transition hover:text-sky-500"
+          aria-label={link.label}
+          href={link.href}
+        >
+          {link.title}
+        </a>
+      ))
+    }
 </header>
+
+<script>
+  
+  document.addEventListener("astro:page-load", () => {
+    const sections = document.querySelectorAll("section")
+    const navItems = document.querySelectorAll("header nav a")
+
+    const callback = (entries: any[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navItems.forEach((item) => {
+            if (item.getAttribute("aria-label") == entry.target.id) {
+              item.classList.add("text-sky-200")
+            } else {
+              item.classList.remove("text-sky-200")
+            }
+          })
+        }
+      })
+    }
+
+    const observer = new IntersectionObserver(callback, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.25,
+    })
+
+    sections.forEach((section) => {
+      observer.observe(section)
+    })
+
+    // Cleanup function
+    document.onvisibilitychange = () => {
+      if (document.visibilityState === "hidden") {
+        observer.disconnect()
+      } else {
+        sections.forEach((section) => {
+          observer.observe(section)
+        })
+      }
+    }
+  })
+</script>
+
+<style>
+  nav {
+    animation: nav-shadown 1s linear both;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+  }
+
+  @keyframes nav-shadown {
+    to {
+      @apply shadow-lg ring-1 backdrop-blur dark:bg-gray-800/90 bg-white/20 ring-white/10;
+    }
+  }
+</style>

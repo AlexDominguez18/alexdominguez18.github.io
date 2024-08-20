@@ -1,0 +1,89 @@
+---
+import {
+  LaravelIcon,
+  ReactIcon,
+  VueIcon,
+  BootstrapIcon,
+  PhpIcon,
+  JavascriptIcon,
+  DockerIcon,
+  MysqlIcon,
+  RedisIcon,
+  LivewireIcon,
+} from './icons/';
+
+const tags = {
+  laravel: {
+    color: 'bg-red-50',
+    text: 'Laravel',
+    class: 'text-red-900',
+    icon: LaravelIcon,
+  },
+  reactjs: {
+    color: 'bg-blue-50',
+    text: 'ReactJS',
+    class: 'text-blue-900',
+    icon: ReactIcon,
+  },
+  vuejs: {
+    color: 'bg-green-50',
+    text: 'VueJS',
+    class: 'text-green-900',
+    icon: VueIcon,
+  },
+  bootstrap: {
+    color: 'bg-purple-50',
+    text: 'Bootstrap',
+    class: 'text-purple-600',
+    icon: BootstrapIcon,
+  },
+  php: {
+    color: 'bg-indigo-100',
+    text: 'PHP',
+    class: 'text-indigo-600',
+    icon: PhpIcon,
+  },
+  javascript: {
+    color: 'bg-yellow-50',
+    text: 'JavaScript',
+    class: 'text-yellow-800',
+    icon: JavascriptIcon,
+  },
+  docker: {
+    color: 'bg-cyan-200',
+    text: 'Docker',
+    class: 'text-cyan-800',
+    icon: DockerIcon,
+  },
+  mysql: {
+    color: 'bg-sky-100',
+    text: 'MySQL',
+    class: 'text-sky-800',
+    icon: MysqlIcon,
+  },
+  redis: {
+    color: 'bg-red-200',
+    text: 'Redis',
+    class: 'text-red-800',
+    icon: RedisIcon,
+  },
+  livewire: {
+    color: 'bg-pink-200',
+    text: 'Livewire',
+    class: 'text-pink-800',
+    icon: LivewireIcon,
+  },
+};
+
+interface Props {
+  tagName: string;
+}
+
+const { tagName } = Astro.props;
+const tag = tags[tagName];
+---
+
+<span class={`flex items-center px-4 py-1 rounded-lg text-sm ${tag.color} ${tag.class} hover:scale-125 transition`}>
+  <tag.icon class="size-4" />
+  <span class="ps-1">{tag.text}</span>
+</span>

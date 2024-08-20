@@ -13,6 +13,8 @@
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource-variable/onest": "^5.0.4",
     "astro": "^4.13.2",
+    "flowbite": "^2.5.1",
+    "lite-youtube-embed": "^0.3.3",
     "tailwindcss": "^3.4.9"
   }
 }

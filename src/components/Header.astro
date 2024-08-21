@@ -1,4 +1,6 @@
 ---
+import { SunIcon, MoonIcon } from './icons';
+
 const navItems = [
   {
     title: 'Home',
@@ -35,10 +37,19 @@ const navItems = [
         </a>
       ))
     }
+  </nav>
+  <span id="theme-toggle">
+    <button
+      class="p-2 text-gray-300 hover:text-sky-200"
+      aria-label="Toggle dark mode"
+    >
+      <SunIcon id="lightIcon" class="size-6" />
+      <MoonIcon id="darkIcon" class="size-6 hidden" />
+    </button>
+  </span>
 </header>
 
 <script>
-  
   document.addEventListener("astro:page-load", () => {
     const sections = document.querySelectorAll("section")
     const navItems = document.querySelectorAll("header nav a")
@@ -78,6 +89,35 @@ const navItems = [
       }
     }
   })
+</script>
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const buttonTheme = document.getElementById("theme-toggle");
+    const lightIcon = document.getElementById("lightIcon");
+    const darkIcon = document.getElementById("darkIcon");
+    const setTheme = (theme) => localStorage.setItem("theme", theme);
+    const getTheme = () => localStorage.getItem("theme");
+
+    lightIcon.classList.remove("hidden");
+    darkIcon.classList.add("hidden");
+
+    buttonTheme.addEventListener("click", () => {
+      if (getTheme() === "dark"
+        || (!("theme" in localStorage) 
+        && window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        setTheme("light");
+        lightIcon.classList.add("hidden");
+        darkIcon.classList.remove("hidden");
+        document.documentElement.classList.add("dark");
+      } else {
+        setTheme("dark");
+        darkIcon.classList.add("hidden");
+        lightIcon.classList.remove("hidden");
+        document.documentElement.classList.remove("dark");
+      }
+    });
+  });
 </script>
 
 <style>

@@ -1,4 +1,6 @@
 ---
+import { SunIcon, MoonIcon } from './icons';
+
 const navItems = [
   {
     title: 'Home',
@@ -22,12 +24,12 @@ const navItems = [
   },
 ];
 ---
-<header class="flex justify-center items-center z-50 w-full mx-auto py-10 fixed top-0 ">
-  <nav class="flex px-3 text-sm font-medium rounded-full text-gray-300 hover:text-sky-200">
+<header class="flex justify-center items-center z-50 w-full mx-auto py-10 fixed top-0">
+  <nav class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-300 hover:text-sky-600 dark:hover:text-sky-200">
     {
       navItems.map((link) => (
         <a
-          class="relative block px-2 py-2 transition hover:text-sky-500"
+          class="relative block p-2 transition hover:text-sky-900 dark:hover:text-sky-500"
           aria-label={link.label}
           href={link.href}
         >
@@ -35,10 +37,18 @@ const navItems = [
         </a>
       ))
     }
+    <button
+      id="theme-toggle"
+      class="p-2 text-gray-600 dark:text-gray-300 hover:text-sky-600 dark:hover:text-sky-200"
+      aria-label="Toggle dark mode"
+    >
+      <SunIcon id="lightIcon" class="size-4" />
+      <MoonIcon id="darkIcon" class="size-4" />
+    </button>
+  </nav>
 </header>
 
 <script>
-  
   document.addEventListener("astro:page-load", () => {
     const sections = document.querySelectorAll("section")
     const navItems = document.querySelectorAll("header nav a")
@@ -47,11 +57,8 @@ const navItems = [
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
-            if (item.getAttribute("aria-label") == entry.target.id) {
-              item.classList.add("text-sky-200")
-            } else {
-              item.classList.remove("text-sky-200")
-            }
+            if (item.getAttribute("aria-label") == entry.target.id) item.classList.add("text-sky-600", "dark:text-sky-200")
+            else item.classList.remove("text-sky-600", "dark:text-sky-200")
           })
         }
       })

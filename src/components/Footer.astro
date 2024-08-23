@@ -8,7 +8,7 @@ const year = new Date().getFullYear();
 const socialNetworks = [
   {
     name: "Twitter",
-    url: "#",
+    url: "https://x.com/AlexDuranDev",
     icon: TwitterIcon,
   },
   {
@@ -24,17 +24,17 @@ const socialNetworks = [
 ];
 ---
 
-<footer class="bg-gray-900 mt-40">
+<footer class="bg-white border border-cyan-900 dark:bg-gray-900 mt-20">
   <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-    <div class="sm:flex sm:items-center sm:justify-between">
-      <span class="text-sm text-gray-200 sm:text-cente"
-        >© {year} Alejandro Duran - Software Developer
+    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center">
+      <span class="text-sm text-gray-950 dark:text-gray-200 text-center sm:text-center"
+        >© {year} Alejandro Duran - Computer Science Engineer & Software Developer
       </span>
-      <div class="flex mt-4 sm:justify-center sm:mt-0">
+      <div class="flex mt-4 sm:mt-0 justify-center md:justify-start">
         {
           socialNetworks.map((network) => (
             <a href={network.url}
-              class="text-gray-300 hover:text-gray-500 dark:hover:text-white ms-5"
+              class="text-gray-950 dark:text-gray-300 hover:text-gray-500 dark:hover:text-white ms-5"
             >
               <network.icon class="size-6" />
               <span class="sr-only">{network.name}</span>

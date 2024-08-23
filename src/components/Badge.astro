@@ -5,10 +5,10 @@ const { class: className } = Astro.props;
 <div class="flex items-center mx-4">
   <span class="relative inline-flex overflow-hidden rounded-full p-[3px]">
     <span
-      class="absolute inset-[-1000%] animate-[spin_5s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#52DBE5_0%,#28797C_50%,#52E0E5_100%)]"
+      class="absolute inset-[-1000%] animate-[spin_5s_linear_infinite] dark:bg-[conic-gradient(from_90deg_at_50%_50%,#71DFF8_0%,#378597_50%,#14C6EE_100%)] bg-[conic-gradient(from_90deg_at_50%_50%,#52DBE5_0%,#28797C_50%,#52E0E5_100%)]"
     ></span>
     <div
-      class="inline-flex items-center justify-center w-full px-3 py-1 text-sm text-sky-600 bg-green-100 rounded-full cursor-pointer  backdrop-blur-3xl whitespace-nowrap"
+      class="inline-flex items-center justify-center w-full px-3 py-1 text-sm text-sky-950 dark:text-sky-300 rounded-full cursor-pointer backdrop-blur-3xl whitespace-nowrap"
     >
       <slot />
     </div>

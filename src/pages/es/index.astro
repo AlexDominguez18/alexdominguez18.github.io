@@ -1,19 +1,21 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "../../layouts/Layout.astro";
 import Image from "astro/components/Image.astro";
-import SectionContainer from "../components/SectionContainer.astro";
-import Home from "../components/Home.astro";
-import Experience from "../components/Experience.astro";
-import About from "../components/About.astro";
-import Projects from "../components/Projects.astro";
-import Badge from "../components/Badge.astro";
-import { CodeIcon, BriefcaseIcon, UserIcon } from "../components/icons/";
+import SectionContainer from "../../components/SectionContainer.astro";
+import Home from "../../components/Home.astro";
+import Experience from "../../components/Experience.astro";
+import About from "../../components/About.astro";
+import Projects from "../../components/Projects.astro";
+import Badge from "../../components/Badge.astro";
+import { CodeIcon, BriefcaseIcon, UserIcon } from "../../components/icons";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+console.log(t('site.title'));
 ---
 
-<Layout
-  title="Alex Duran's portfolio"
-  description="Alex Duran's portfolio, software and web developer specialized on full-stack development."
->
+<Layout title={t('site.title')} description={t('site.description')}>
   <main class="px-10 mx-auto">
     <SectionContainer id="home" class="pt-28 pb-20">
       <div class="flex flex-col lg:flex-row justify-center lg:justify-start items-center">

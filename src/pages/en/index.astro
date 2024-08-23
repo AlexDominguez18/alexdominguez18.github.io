@@ -1,0 +1,56 @@
+---
+import Image from "astro/components/Image.astro";
+import Layout from "../../layouts/Layout.astro";
+import SectionContainer from "../../components/SectionContainer.astro";
+import Home from "../../components/Home.astro";
+import Experience from "../../components/Experience.astro";
+import About from "../../components/About.astro";
+import Projects from "../../components/Projects.astro";
+import Badge from "../../components/Badge.astro";
+import { CodeIcon, BriefcaseIcon, UserIcon } from "../../components/icons";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title={t('site.title')} description={t('site.description')}>
+  <main class="px-10 mx-auto">
+    <SectionContainer id="home" class="pt-28 pb-20">
+      <div class="flex flex-col lg:flex-row justify-center lg:justify-start items-center">
+        <Image
+          src="/images/alejandro.png"
+          alt="Alex's beauty face"
+          class="mask-gradient-to-t mb-10 hover:scale-125 transition duration-500"
+          width="120"
+          height="120"
+        />
+        <a target="_blank" href="/docs/CV - Alejandro Duran (English).pdf" class="hover:scale-105 transition">
+          <Badge class="ms-10 p-1">Download my CV!</Badge>
+        </a>
+      </div>
+      <Home class="pt-10 lg:pt-0" />
+    </SectionContainer>
+    <SectionContainer id="experience" class="pt-10 pb-20">
+      <h2 class="text-sky-950 dark:text-white text-2xl font-semibold flex gap-x-2 pb-10">
+        <BriefcaseIcon class="size-8" />
+        Work Experience
+      </h2>
+      <Experience />
+    </SectionContainer>
+    <SectionContainer id="projects" class="pt-10">
+      <h2 class="text-sky-950 dark:text-white text-2xl font-semibold flex gap-x-2 pb-10">
+        <CodeIcon class="size-8" />
+        Projects
+      </h2>
+      <Projects />
+    </SectionContainer>
+    <SectionContainer id="about" class="pt-10">
+      <h2 class="text-sky-950 dark:text-white text-2xl font-semibold flex gap-x-2 pb-10">
+        <UserIcon class="size-8" />
+        About me
+      </h2>
+      <About />
+    </SectionContainer>
+  </main>
+</Layout>

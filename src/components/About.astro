@@ -1,5 +1,6 @@
 ---
 import Image from "astro/components/Image.astro";
+import YoutubeIcon from "./icons/YoutubeIcon.astro";
 
 const channelURL = encodeURIComponent("https://www.youtube.com/feeds/videos.xml?channel_id=UCCzoeCrtf1e4GfFV9fdHGcw");
 const reqURL = `https://api.rss2json.com/v1/api.json?rss_url=${channelURL}`;
@@ -14,45 +15,45 @@ try {
   lastVideoTitle += data.items[0].title;
 } catch (error) {
   console.error(error);
-  lastVideoId = "dQw4w9WgXcQ";
+  lastVideoId = "5EFAG9jCHE0";
 }
 ---
 
 <article class="flex flex-col items-center justify-center gap-8 md:flex-row text-center md:text-left">
-  <div class="order-2 md:order-1 text-gray-300 text-pretty font-semibold space-y-5">
+  <div class="order-2 md:order-1 text-gray-600 dark:text-gray-300 text-pretty font-semibold space-y-5">
     <p>
       My name is Alejandro Duran, but feel free to call me Alex. I began
       coding out of a passion for video game development, and today <span
-        class="text-sky-200 font-bold"
+        class="text-cyan-800 dark:text-sky-200 font-bold"
       >
         I am a computer science engineer and software developer</span
       >. I graduated in 2022 from the <a
         href="https://www.cucei.udg.mx/"
-        class="inline-flex justify-items-center text-white hover:border border-gray-400 rounded-full px-1 hover:text-sky-400 transition"
+        class="inline-flex justify-items-center text-sky-500 dark:text-white hover:border border-gray-400 rounded-full px-1 hover:text-sky-300 transition"
         >Universidad de Guadalajara</a
-      > in Jalisco, México, where I contributed to <span class="text-sky-200 font-bold"
+      > in Jalisco, México, where I contributed to <span class="text-cyan-800 dark:text-sky-200 font-bold"
         >developing several web systems and applications
       </span> that are still in use by the University.
     </p>
 
     <p>
       Currently, my focus is on full-stack development, though my expertise also spans  <span
-        class="text-sky-200 font-bold"
+        class="text-cyan-800 dark:text-sky-200 font-bold"
         >linux servers, project management, software engineering,
         low-level programming and database administration</span
       >. I have worked on a variety of projects, from developing web applications to designing and implementing databases, and I am always looking for new challenges to tackle.
     </p>
 
     <p>
-      In addition, I design and teach a <span class="text-sky-200 font-bold"
+      In addition, I design and teach a <span class="text-cyan-800 dark:text-sky-200 font-bold"
         >C/C++ Programming Course</span
       >  for workers of a manufacturing company, where I share my knowledge and experience with those interested in low-level programming. You can find the course repository on my Github account:
       <a
-        class="inline-flex justify-items-center px-1 text-white hover:border border-gray-400 rounded-full hover:text-sky-400 transition"
+        class="inline-flex justify-items-center px-1 text-sky-500 dark:text-white hover:border border-gray-400 rounded-full hover:text-sky-300 transition"
         href="https://github.com/AlexDominguez18/Curso-Programacion-TSU-UDG/"
         >Course Repository</a
       > or you can check out some of the clases on my <a
-        class="inline-flex justify-items-center px-1 text-white hover:border border-gray-400 rounded-full hover:text-sky-400 transition"
+        class="inline-flex justify-items-center px-1 text-sky-500 dark:text-white hover:border border-gray-400 rounded-full hover:text-sky-300 transition"
         href="">Youtube channel</a>.
     </p>
   </div>
@@ -66,9 +67,9 @@ try {
   />
 </article>
 <article class="text-center lg:text-left">
-  <h2 class="text-2xl font-semibold pt-10">
+  <h2 class="text-cyan-800 dark:text-white inline-flex text-2xl font-semibold pt-10">
+    <YoutubeIcon class="size-8 mr-4" />
     My latest video on YouTube
-    <span class="size-8">🎥</span>
   </h2>
   <lite-youtube 
     class="my-10" 

@@ -14,6 +14,8 @@ import RedisIcon from "./RedisIcon.astro";
 import DockerIcon from "./DockerIcon.astro";
 import LivewireIcon from "./LivewireIcon.astro";
 import UserIcon from "./UserIcon.astro";
+import SunIcon from "./SunIcon.astro";
+import MoonIcon from "./MoonIcon.astro";
 
 export { 
   GithubIcon,
@@ -31,5 +33,7 @@ export {
   RedisIcon,
   DockerIcon,
   LivewireIcon,
-  UserIcon
+  UserIcon,
+  SunIcon,
+  MoonIcon
 };

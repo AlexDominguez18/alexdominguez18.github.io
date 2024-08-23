@@ -1,12 +1,18 @@
 <a 
 class={`
     rounded-full 
-    bg-white/5
-    border border-white/10 
+    bg-orange-100/80
+    dark:bg-white/5
+    border
+    border-bg-orange-100/80 
+    dark:border-white/10 
     flex justify-center items-center 
     py-2 px-4 gap-x-2
-    hover:bg-white/10
-    hover:scale-110  
+    hover:bg-orange-100
+    dark:hover:bg-white/10
+    hover:scale-110
+    transition
+    duration-300
   `}
   {...Astro.props}
   target="_blank"

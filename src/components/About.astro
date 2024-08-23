@@ -13,7 +13,6 @@ try {
   const data = await response.json();
   lastVideoId = data.items[0].link.split("v=")[1];
   lastVideoTitle += data.items[0].title;
-  console.log( { lastVideoId, lastVideoTitle });
 } catch (error) {
   console.error(error);
   lastVideoId = "5EFAG9jCHE0";
